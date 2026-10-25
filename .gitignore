@@ -1,0 +1,17 @@
+# Secrets: never commit these
+.env
+.env.*
+*.key
+*.pem
+
+# Unredacted evidence stays local; only redacted copies go in evidence/
+raw/
+
+# Captures and samples: summarize in the case instead
+*.pcap
+*.pcapng
+*.evtx
+*.dmp
+
+# Local tooling
+.claude/settings.local.json
