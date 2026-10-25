@@ -61,6 +61,7 @@ Detail: [SIEM design](https://github.com/J-DeMarzo/enterprise-homelab/blob/main/
 - **MITRE ATT&CK** mapping
 - **Detection engineering:** writing, testing, and tuning SPL detections against real lab data
 - **Attack emulation** with Kali and Atomic Red Team
+- **AI-assisted triage, checked against the evidence:** a first pass by a local LLM, so no log data leaves the lab, with every claim verified in the case
 
 ## Repository layout
 
@@ -71,7 +72,9 @@ cases/
     evidence/      screenshots and exported search results
   TEMPLATE.md
 roadmap.md         planned cases
-scripts/new-case.sh
+scripts/
+  new-case.sh      creates a case folder from the template
+  llm-triage.sh    local-LLM first pass on a Splunk export
 ```
 
 ## Security note

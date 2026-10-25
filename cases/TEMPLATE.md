@@ -15,6 +15,15 @@ What fired, when, and on which host or user. Include the alert-queue entry: a sc
 ## 2. Triage
 First five minutes: is it real? Which data confirms or rules it out? What's the likely impact?
 
+### Local LLM first pass
+A summarized search sent to the lab's local model with [`scripts/llm-triage.sh`](../../scripts/llm-triage.sh), before the investigation below. Output: [`evidence/llm-triage.md`](evidence/llm-triage.md). Each claim is checked against the data.
+
+| Model's claim | Checked against | Result |
+|---|---|---|
+| | SPL / evidence file | ✅ correct · ❌ wrong · ⚠️ missed something · 🚫 not in the data |
+
+**Takeaway:** did the first pass save time, mislead, or miss anything an analyst would catch?
+
 ## 3. Investigation
 The questions asked and the SPL that answered them. Link each answer to its evidence file.
 

@@ -14,6 +14,12 @@ The lab itself lives in **enterprise-homelab**, cloned locally at `/home/demarzo
 - Times are UTC.
 - When a case is done: add it to the cases table in `README.md`, fill in the Case column of the detections table, tick it in `roadmap.md`, and replace "Phase 5"/"Planned" for that detection in enterprise-homelab's `detections/README.md` with a link to the case.
 
+## Local LLM first pass
+
+- `scripts/llm-triage.sh` sends a Splunk CSV to `qwen3.5:4b` on `llm` (enterprise-homelab ADR 0010), reachable only from `ops`. Keep the CSV in `raw/` and write the output to `evidence/llm-triage.md`.
+- Send summarized searches (`stats ... by src_ip user action`), not raw events. Only the first 50 rows are sent by default.
+- Model output is never a finding. Every claim goes in the case's check table, with the SPL or evidence file that confirms or contradicts it. Redaction rules apply to the output too.
+
 ## Evidence and redaction
 
 - Allowed: RFC 1918 addresses, `demarzo.lab` names, lab hostnames, lab usernames.
