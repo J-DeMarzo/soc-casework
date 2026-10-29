@@ -4,7 +4,7 @@ Each item is one emulated attack → detection → case write-up. An item is che
 
 ## Lab cases
 Ordered by what needs the least new work.
-- [ ] SSH brute force against `linux-victim` (T1110.001). There's no SSH brute-force detection yet, so writing one is part of the case
+- [x] SSH brute force against `linux-victim` (T1110.001): [CASE-2026-001](cases/2026-10-28-ssh-brute-force/README.md). The case produced a new [detection](https://github.com/J-DeMarzo/enterprise-homelab/blob/main/detections/credential-access-ssh-brute-force.spl)
 - [ ] DNS tunneling / exfiltration (T1071.004). The [detection](https://github.com/J-DeMarzo/enterprise-homelab/blob/main/detections/exfiltration-dns-tunneling.spl) exists, so this needs the emulation run and the write-up
 - [ ] Web attack against `vuln-web`, e.g. SQL injection (T1190)
 - [ ] Network scan and cross-VLAN probe (T1046), detected from the Omada gateway ACL logs ([detection](https://github.com/J-DeMarzo/enterprise-homelab/blob/main/detections/discovery-denied-probes-to-management.spl))

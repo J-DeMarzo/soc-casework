@@ -1,0 +1,3 @@
+# Proxmox VM configs, net0 line (TheRising cluster), read 2026-10-29
+250 kali          (sevro)   net0: virtio=BC:24:11:B3:C6:B2,bridge=vmbr0,firewall=1,tag=40
+350 linux-victim  (ragnar)  net0: virtio=BC:24:11:D5:4D:64,bridge=vmbr0,firewall=1,tag=40

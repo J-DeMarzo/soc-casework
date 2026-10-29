@@ -4,13 +4,13 @@ Security operations work from my homelab: attacks emulated from Kali against lab
 
 The lab these cases run in (network, Splunk, targets, and the detections as code) is documented in **[enterprise-homelab](https://github.com/J-DeMarzo/enterprise-homelab)**.
 
-> **Status:** five detections are built and tested against recorded attacks. The first case, SSH brute force against a Linux host, is next ([roadmap](roadmap.md)).
+> **Status:** six detections are built and tested against recorded attacks. The first case, [SSH brute force against linux-victim](cases/2026-10-28-ssh-brute-force/README.md), is done; DNS tunneling is next ([roadmap](roadmap.md)).
 
 ## Cases
 
 | Date | Case | ATT&CK | Verdict |
 |---|---|---|---|
-| *No cases yet. The first ones are SSH brute force and DNS tunneling ([roadmap](roadmap.md)).* | | | |
+| 2026-10-29 | [CASE-2026-001: SSH brute force against linux-victim](cases/2026-10-28-ssh-brute-force/README.md) | T1110.001, T1078.003 | True positive. Password guessed and used to log in, no activity after; led to a new detection |
 
 ## Workflow
 
@@ -41,6 +41,7 @@ Detections are SPL, kept as code in [enterprise-homelab/detections](https://gith
 | [IoT device resolves a never-seen domain](https://github.com/J-DeMarzo/enterprise-homelab/blob/main/detections/command-and-control-new-iot-domain.spl) | T1071 | — |
 | [DNS tunneling](https://github.com/J-DeMarzo/enterprise-homelab/blob/main/detections/exfiltration-dns-tunneling.spl) | T1071.004 | Planned |
 | [Web probing against demarzo.dev](https://github.com/J-DeMarzo/enterprise-homelab/blob/main/detections/reconnaissance-web-probing.spl) | T1595.003 | — |
+| [SSH brute force](https://github.com/J-DeMarzo/enterprise-homelab/blob/main/detections/credential-access-ssh-brute-force.spl) | T1110.001, T1078.003 | [CASE-2026-001](cases/2026-10-28-ssh-brute-force/README.md) |
 
 ## The lab in brief
 
